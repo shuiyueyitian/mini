@@ -1,0 +1,393 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "amd": true
+    },
+    "globals": {
+        "DEV_DOMAINS": true,
+        "ST_DOMAINS": true,
+        "ST1_DOMAINS": true,
+        "ST2_DOMAINS": true,
+        "ST3_DOMAINS": true,
+        "PRE_DOMAINS": true,
+        "PROD_DOMAINS": true,
+        "CURRENT_DOMAINS": true,
+        "BUILD_TIME": true,
+        "DOMAIN_ENV": true,
+        "APPID_SUFFIX": true,
+        "THIRD_PLATFORM":true,
+        "wx": true,
+        "WeixinJSBridge":true,
+        "pdfjsLib":true
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+    "settings": {
+        "react": {
+            "pragma": "Taro",
+            "version": "15.0"
+        },
+        "propWrapperFunctions": [
+            //   "forbidExtraProps", // https://www.npmjs.com/package/airbnb-prop-types
+            // "exact", // https://www.npmjs.com/package/prop-types-exact
+            // "Object.freeze" // https://tc39.github.io/ecma262/#sec-object.freeze
+        ]
+    },
+    // "extends": ["plugin:react/recommended"]
+    "rules": {
+
+        "padded-blocks": ["error", "never"],
+        "arrow-spacing": ["error", {
+            "before": true,
+            "after": true
+        }],
+        "space-before-blocks": ["error", "always"],
+        "space-before-function-paren": ["error", "always"],
+        "semi": ["error", "always"],
+        "newline-after-var": ["error", "always"],
+        "comma-spacing": ["error", {
+            "before": false,
+            "after": true
+        }],
+        "space-infix-ops": "error",
+        "key-spacing": ["error", {
+            "beforeColon": false
+        }],
+        "object-curly-spacing": ["error", "never"],
+        "jsx-quotes": ["error", "prefer-single"],
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "no-spaced-func": "error",
+        "generator-star-spacing": "off",
+        "jsx-indent-props": [4, "space"],
+        "arrow-parens": ["error", "always"],
+        "no-console": ["error", {
+            "allow": ["warn", "error","log"]
+        }],
+        "no-undef": "error",
+        "no-dupe-keys": "error",
+        "curly": ["error"],
+        "no-redeclare": "error",
+        "no-use-before-define": "error",
+        "brace-style": "error",
+        "block-spacing": "error",
+        "comma-style": ["error", "last"],
+        "keyword-spacing": ["error", {
+            "before": true
+        }],
+        "no-mixed-spaces-and-tabs": "error",
+        "no-multi-assign": "error",
+        "arrow-body-style": ["error", "always"],
+        "no-duplicate-imports": "error",
+        "no-var": "error",
+        "prefer-arrow-callback": "error",
+        "prefer-rest-params": "error",
+        "constructor-super": "error",
+        "prefer-template": "error",
+        "template-curly-spacing": ["error", "never"],
+        // "object-property-newline": "error"
+        // "no-shadow": "error"
+        // "no-magic-numbers": "error",
+
+        /* 
+           jsx rule
+         */
+        // // Prevent usage of Array index in keys
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+        // "react/no-array-index-key": "warn",
+
+        // Prevent passing of children as props
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-children-prop.md
+        "react/no-children-prop": ["error"],
+
+        // Prevent usage of deprecated methods
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-deprecated.md
+        // [1, {"react": "0.13.0"}]
+        // "react/no-deprecated": ["off"],
+
+
+        // Prevent usage of setState in componentDidMount
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-mount-set-state.md
+        // this is necessary for server-rendering
+        // "react/no-did-mount-set-state": "off",
+
+        // Prevent usage of setState in componentDidUpdate
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-did-update-set-state.md
+        "react/no-did-update-set-state": "error",
+
+
+
+        // Prevent usage of setState in componentWillUpdate
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-will-update-set-state.md
+        "react/no-will-update-set-state": "error",
+
+        // Prevent direct mutation of this.state
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-direct-mutation-state.md
+        "react/no-direct-mutation-state": ["error"],
+
+        // Prevents common typos
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-typos.md
+        "react/no-typos": ["error"],
+
+        // Prevent using string references
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-string-refs.md
+        "react/no-string-refs": "error",
+
+        // Prevent invalid characters from appearing in markup
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md
+        "react/no-unescaped-entities": "error",
+
+        // Prevent unused state values
+        // https://github.com/yannickcr/eslint-plugin-react/pull/1103/
+        "react/no-unused-state": "error",
+
+        // Require render() methods to return something
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/require-render-return.md
+        "react/require-render-return": "error",
+
+        // Prevent extra closing tags for components without children
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/self-closing-comp.md
+        "react/self-closing-comp": ["error", {
+            "component": true,
+            "html": false
+        }],
+
+        // Prevent missing React when using JSX
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md
+        "react/react-in-jsx-scope": "error",
+
+
+        //Prevent missing props validation in a React component definition 
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/prop-types.md
+        // "react/prop-types":"error",
+
+
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md
+        // Enforces where React component static properties should be positioned.
+        //     react/static-property-placement
+
+        //合并后再处理
+
+        // 1.https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-comp.md
+        // Enforce component methods order (react/sort-comp)
+        // This rule can take one argument to customize the components organisation.
+
+        // ...
+        // "react/sort-comp": [<enabled>, { order: <order>, groups: <groups> }]
+        // ...
+        // enabled: for enabling the rule. 0=off, 1=warn, 2=error. Defaults to 0.
+        // order: optional array of methods to validate.
+        // groups: optional object of methods groups.
+
+        // 2. https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
+        // react/sort-prop-types
+        // ...
+        // "react/sort-prop-types": [<enabled>, {
+        // "callbacksLast": <boolean>,
+        // "ignoreCase": <boolean>,
+        // "requiredFirst": <boolean>,
+        // "sortShapeProp": <boolean>,
+        // "noSortAlphabetically": <boolean>
+        // }]
+        // ...
+        // // Enforce propTypes declarations alphabetical sorting
+        //     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/sort-prop-types.md
+        //     "react/sort-prop-types": ["off", {
+        //     ignoreCase: true,
+        //     callbacksLast: false,
+        //     requiredFirst: false
+        //     }],
+
+
+        /* 
+            jsx style 
+        */
+
+        // Enforce boolean attributes notation in JSX
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-boolean-value.md
+        "react/jsx-boolean-value": ["error", "never", {
+            "always": []
+        }],
+
+        //Enforce or disallow spaces inside of curly braces in JSX attributes and expressions
+        //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-child-element-spacing.md
+        // "react/jsx-child-element-spacing":["error"]
+
+        // Validate closing bracket location in JSX
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-closing-bracket-location.md
+        "react/jsx-closing-bracket-location": ["error", {
+            "selfClosing": "line-aligned",
+            "nonEmpty": "line-aligned"
+        }],
+
+        // Enforce spacing around jsx equals signs
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-equals-spacing.md
+        "react/jsx-equals-spacing": ["error", "never"],
+
+        //Enforce linebreaks in curly braces in JSX attributes and expressions.
+        //jsx 属性中的方法 直接写箭头函数就是不推荐的 所以这种格式化后可能不符合平常的习惯  暂时先忽略这种情况
+        //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-newline.md
+        // "react/jsx-curly-newline": ["error", {
+        //     "multiline": "require",
+        //     "singleline": "forbid"
+        // }],
+
+        //Validate JSX indentation
+        //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent.md
+        // "react/jsx-indent": ["error",4, {
+        //     "checkAttributes": true, 
+        //     "indentLogicalExpressions":true}
+        // ],
+
+        // Validate props indentation in JSX
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-indent-props.md
+        // "react/jsx-indent-props": ["error", 4],
+
+        // Validate JSX has key prop when in array or iterator
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-key.md
+        "react/jsx-key": ["error"],
+
+        // Prevent duplicate props in JSX
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-duplicate-props.md
+        "react/jsx-no-duplicate-props": ["error", {
+            "ignoreCase": true
+        }],
+
+        // Disallow undeclared variables in JSX
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-undef.md
+        "react/jsx-no-undef": "error",
+
+        // Enforce curly braces or disallow unnecessary curly braces in JSX props and/or children
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-curly-brace-presence.md
+        "react/jsx-curly-brace-presence": ["error", {
+            "props": "never",
+            "children": "never"
+        }],
+
+        // Enforce PascalCase for user-defined JSX components
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md
+        "react/jsx-pascal-case": ["error", {
+            "allowAllCaps": true,
+            "ignore": []
+        }],
+
+        //Disallow multiple spaces between inline JSX props
+        //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-multi-spaces.md
+        "react/jsx-props-no-multi-spaces": "error",
+
+        // // Validate whitespace in and around the JSX opening and closing brackets
+        // // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-tag-spacing.md
+        "react/jsx-tag-spacing": ["error", {
+            "closingSlash": "never",
+            "beforeSelfClosing": "always",
+            "afterOpening": "never",
+            "beforeClosing": "allow"
+        }],
+
+        // Prevent variables used in JSX to be incorrectly marked as unused
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-uses-vars.md
+        // "react/jsx-uses-vars": "error",
+
+        //Prevent missing parentheses around multiline JSX 
+        //https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-wrap-multilines.md
+        "react/jsx-wrap-multilines": ["error", {
+            "declaration": "parens",
+            "assignment": "parens",
+            "return": "parens",
+            "arrow": "parens",
+            "condition": "ignore",
+            "logical": "ignore",
+            "prop": "ignore"
+        }],
+
+        // "react/jsx-sort-default-props": ["error", {
+        //     "ignoreCase": true
+        // }]
+
+        // Enforce props alphabetical sorting
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-sort-props.md
+        // "react/jsx-sort-props": ["off", {
+        //     "ignoreCase": true,
+        //     "callbacksLast": false,
+        //     "shorthandFirst": false,
+        //     "shorthandLast": false,
+        //     "noSortAlphabetically": false,
+        //     "reservedFirst": true
+        // }]
+        "no-restricted-properties": [2, {
+            "object": "Taro",
+            "property": "navigateTo",
+            "message": "请使用Router.toPage方法,type设置为指定的跳转类型"
+        }, {
+            "object": "Taro",
+            "property": "reLaunch",
+            "message": "请使用Router.toPage方法,type设置为指定的跳转类型"
+        }, {
+            "object": "Taro",
+            "property": "redirectTo",
+            "message": "请使用Router.toPage方法,type设置为指定的跳转类型"
+        }, {
+            "object": "Taro",
+            "property": "switchTab",
+            "message": "请使用Router.toPage方法,type设置为指定的跳转类型"
+        }, {
+            "object": "Taro",
+            "property": "navigateBack",
+            "message": "请使用Router.back或者Router.toPage方法(type设置为指定的跳转类型)"
+        }],
+        "no-restricted-imports": ["error", {
+            "paths": [{
+                "name": "@tarojs/components",
+                "importNames": ["Navigator"],
+                "message": "禁止导入Navigator组件，请使用Router.toPage方法跳转页面"
+            }]
+            // ,
+            // "patterns": ["pages"]
+        }],
+        "no-restricted-syntax": [2,
+            {
+                "selector": "MemberExpression[object.property.name='app'][property.name='toPage']",
+                "message": "请使用Router.toPage"
+            },
+            {
+                "selector": "MemberExpression[object.property.name='app'][property.name='setPageParams']",
+                "message": "请使用Router.setPageParams"
+            },
+            {
+                "selector": "MemberExpression[object.property.name='app'][property.name='try2go']",
+                "message": "try2go方法已弃用,请直接使用Router.toPage方法"
+            },
+            {
+                "selector": "MemberExpression[object.name='app'][property.name='try2go']",
+                "message": "try2go方法已弃用,请直接使用Router.toPage方法"
+            },
+            {
+                "selector": "MemberExpression[object.property.name='app'][property.name=/(go2[A-Z].*)/]",
+                "message": "app.go2xxx方法已弃用,请使用Router.go2xxx方法"
+            }, {
+                "selector": "MemberExpression[object.property.name='pages'][property.name='PAGES']",
+                "message": "pages.PAGES已弃用,请使用Router.routes.XXX.path"
+            }, {
+
+                "selector": "MemberExpression[object.property.name='pages'][property.name=/get.*/]",
+                "message": "pages已弃用,请用其他方法代替"
+            }, {
+
+                "selector": "MemberExpression[object.property.name='app'][property.name='setAppNavigatebarVisible']",
+                "message": "谨慎调用，请给页面继承`@/widgets/base`后在`@/router/routes.js`给页面路由配置`isCustomHeader`属性：true隐藏头，false显示头"
+            }
+        ]
+    }
+    // "extends": ["plugin:react/recommended"]
+}
