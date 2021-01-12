@@ -72,9 +72,6 @@
         "generator-star-spacing": "off",
         "jsx-indent-props": [4, "space"],
         "arrow-parens": ["error", "always"],
-        "no-console": ["error", {
-            "allow": ["warn", "error","log"]
-        }],
         "no-undef": "error",
         "no-dupe-keys": "error",
         "curly": ["error"],

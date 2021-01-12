@@ -32,14 +32,9 @@ class App extends Component {
           color: '#f00',
           selectedColor: '#f0f',
           list: [
-              {
-                  text: '首页',
-                  pagePath: 'pages/index/index'
-              },
-              {
-                  text: '我的',
-                  pagePath: 'pages/index/index'
-              }
+              {text: '首页', pagePath: 'pages/index/index'},
+              {text: '你的', pagePath: 'pages/index/index'},
+              {text: '我的', pagePath: 'pages/index/index'}
           ]
       }
   }
