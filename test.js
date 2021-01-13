@@ -1,9 +1,10 @@
 const glob = require('glob');
 const fs = require('fs');
+const path = require('path');
 const exec = require('child_process').execSync;
 const NotificationCenter = require('node-notifier');
 
-console.time('运算耗时');
+console.time('执行耗时');
 for (let i = 0; i < 10000; i++) {
     i += 1;
 }
@@ -14,7 +15,10 @@ let branch = exec('git rev-parse --abbrev-ref HEAD', {encoding: 'utf8'});
 
 // console.log(all);
 // console.log(only);
-console.log(process.platform);
+console.log(path.resolve(__dirname, 'src/'));
+console.log(path.basename('D:\\mini\\test.js'));
+// console.log(process.env.PATH.split(';'));
+console.log(process.argv);
 console.log(branch, __dirname);
 new NotificationCenter.WindowsToaster({
     withFallback: false
@@ -28,4 +32,4 @@ new NotificationCenter.WindowsToaster({
 });
 fs.writeFileSync('../write.js', '中国工商银行\n中国建设银行\n中国农业银行');
 
-console.timeEnd('运算耗时');
+console.timeEnd('执行耗时');
